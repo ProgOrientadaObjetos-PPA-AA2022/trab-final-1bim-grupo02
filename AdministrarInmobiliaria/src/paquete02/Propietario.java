@@ -10,5 +10,37 @@ package paquete02;
  * @author reroes
  */
 public class Propietario {
+    private String nombres;
+    private String apellidos;
+    private String identificacion;
     
+    public Propietario(String noms, String apell, String ident) {
+        nombres = noms;
+        apellidos = apell;
+        identificacion = ident;
+    }
+    
+    public void establecerNombres(String n) {
+        nombres = n;
+    }
+
+    public void establecerApellidos(String n) {
+        apellidos = n;
+    }
+
+    public void establecerIdentificacion(String n) {
+        identificacion = n;
+    }
+
+    public String obtenerNombres() {
+        return nombres;
+    }
+    
+    public String obtenerApellidos() {
+        return apellidos;
+    }
+    
+    public String obtenerIdentificacion() {
+        return identificacion;
+    }
 }
