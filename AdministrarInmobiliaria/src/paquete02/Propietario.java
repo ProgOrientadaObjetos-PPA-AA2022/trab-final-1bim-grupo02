@@ -17,6 +17,12 @@ public class Propietario implements Serializable {
         identificacion = ident;
     }
     
+    public Propietario(String nom) {
+        
+        nombres = nom;
+       
+    }
+    
     //Establecer
     
     public void establecerNombres(String n) {

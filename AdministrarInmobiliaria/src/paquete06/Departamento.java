@@ -40,6 +40,11 @@ public class Departamento implements Serializable {
         
     }
     
+    public Departamento(double precioM2) {       
+        precioMetroCuadrado = precioM2;
+              
+    }
+    
     //Establecer
 
     public void establecerPropietario(Propietario n) {
@@ -58,7 +63,7 @@ public class Departamento implements Serializable {
         valorAlicuotaMensual = n;
     }
 
-    public void establecerCostoFinal(double n) {
+    public void establecerCostoFinal() {
         costoFinal = (numeroMetrosCuadrados * precioMetroCuadrado) 
                 + (valorAlicuotaMensual * 12);
     }

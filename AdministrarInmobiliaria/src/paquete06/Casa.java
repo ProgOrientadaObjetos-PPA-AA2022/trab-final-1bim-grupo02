@@ -33,6 +33,12 @@ public class Casa implements Serializable {
         
     }
     
+    public Casa(double precioM2) {
+
+        precioMetroCuadrado = precioM2;
+               
+    }
+    
     //Establecer
 
     public void establecerPropietario(Propietario n) {
@@ -47,7 +53,7 @@ public class Casa implements Serializable {
         numeroMetrosCuadrados = n;
     }
 
-    public void establecerCostoFinal(double n) {
+    public void establecerCostoFinal() {
         costoFinal = numeroMetrosCuadrados * precioMetroCuadrado;
     }
 

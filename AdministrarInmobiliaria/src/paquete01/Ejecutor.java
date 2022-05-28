@@ -11,44 +11,79 @@ import paquete06.Departamento;
 
 public class Ejecutor {
 
-    Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
 
         Ejecutor obj = new Ejecutor();
 
-        int op, c = 0;
+        int op, i = 0;
 
         do {
             
-            c++;
+            i++;
 
             op = obj.menu();
 
             switch (op) {
 
                 case 1:
-                    ArrayList<Propietario> ListaPropietarios;
+                    String nombreP;
+                    System.out.println("Ingrese el nombre del propietario: ");
+                    nombreP = sc.nextLine();
+                    ArrayList<Propietario> ListaPropietarios = null;                    
+                    Propietario p = new Propietario(nombreP);
+                    ListaPropietarios.add(p);
                     break;
+
 
                 case 2:
-                    ArrayList<Barrio> ListaBarrios;
+                    String nombreB;
+                    System.out.println("Ingrese el nombre del barrio: ");
+                    nombreB = sc.nextLine();
+                    ArrayList<Barrio> ListaBarrios = null;
+                    Barrio b = new Barrio(nombreB);
+                    ListaBarrios.add(b);
                     break;
+
 
                 case 3:
-                    ArrayList<Ciudad> ListaCiudad;
+                    String nombreC;
+                    System.out.println("Ingrese el nombre de la ciudad: ");
+                    nombreC = sc.nextLine();
+                    ArrayList<Ciudad> ListaCiudad = null;
+                    Ciudad c = new Ciudad(nombreC);
+                    ListaCiudad.add(c);
+                    
                     break;
+
 
                 case 4:
-                    ArrayList<Constructora> ListaConstructura;
+                    String nombreCt;
+                    System.out.println("Ingrese el nombre de la constructora: ");
+                    nombreCt = sc.nextLine();
+                    ArrayList<Constructora> ListaConstructura = null;
+                    Constructora ct = new Constructora(nombreCt);
+                    ListaConstructura.add(ct);
                     break;
 
+
                 case 5:
+                    double precioM2Casa;
+                    System.out.println("Ingrese el precio del metro cuadrado : ");
+                    sc.nextLine();
+                    precioM2Casa = sc.nextDouble();
                     ArrayList<Casa> ListaCasa;
+                    Casa cas = new Casa(precioM2Casa);
                     break;
 
                 case 6:
+                    double precioM2Depto;
+                    System.out.println("Ingrese el precio del metro cuadrado : ");
+                    sc.nextLine();
+                    precioM2Depto = sc.nextDouble();
                     ArrayList<Departamento> ListaDepartamento;
+                    Departamento depto = new Departamento(precioM2Depto);
                     break;
 
                 default:
