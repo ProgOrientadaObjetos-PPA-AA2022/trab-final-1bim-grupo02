@@ -1,20 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package paquete06;
 
+import java.io.Serializable;
 import paquete02.Propietario;
 import paquete03.Barrio;
 import paquete04.Ciudad;
 import paquete05.Constructora;
 
-/**
- *
- * @author reroes
- */
-public class Departamento {
+public class Departamento implements Serializable { 
+    
     private Propietario propietario;
     private double precioMetroCuadrado;
     private double numeroMetrosCuadrados;
@@ -26,6 +20,27 @@ public class Departamento {
     private String ubicacionDepartamentoEdificio;
     private Constructora constructora;
     
+    //Constructores
+    
+    public Departamento(Propietario prop, double precioM2, double numM2,
+            double ValorAli, double costoF, 
+            Barrio barr, Ciudad ciu, String nombreEdif, String ubiDeptoEdi,
+            Constructora cons) {
+
+        propietario = prop;
+        precioMetroCuadrado = precioM2;
+        numeroMetrosCuadrados = numM2;
+        valorAlicuotaMensual = ValorAli;
+        costoFinal = costoF;
+        barrio = barr;
+        ciudad = ciu;  
+        nombreEdificio = nombreEdif;
+        ubicacionDepartamentoEdificio = ubiDeptoEdi;
+        constructora = cons;
+        
+    }
+    
+    //Establecer
 
     public void establecerPropietario(Propietario n) {
         propietario = n;
@@ -44,7 +59,8 @@ public class Departamento {
     }
 
     public void establecerCostoFinal(double n) {
-        costoFinal = n;
+        costoFinal = (numeroMetrosCuadrados * precioMetroCuadrado) 
+                + (valorAlicuotaMensual * 12);
     }
 
     public void establecerBarrio(Barrio n) {
@@ -67,7 +83,7 @@ public class Departamento {
         constructora = n;
     }
     
-    
+    //Obtener
     
     public Propietario obtenerPropietrio() {
         return propietario;

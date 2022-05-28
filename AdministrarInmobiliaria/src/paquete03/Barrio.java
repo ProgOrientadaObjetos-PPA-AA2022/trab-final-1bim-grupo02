@@ -1,22 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package paquete03;
 
-/**
- *
- * @author reroes
- */
-public class Barrio {
+import java.io.Serializable;
+
+public class Barrio implements Serializable {
+    
     private String nombreBarrio;
     private String referencia;
+    
+    //Constructores
     
     public Barrio(String nombreB, String ref) {
         nombreBarrio = nombreB;
         referencia = ref;
     }
+    
+    //Establecer
 
     public void establecerNombreBarrio(String n) {
         nombreBarrio = n;
@@ -25,6 +24,8 @@ public class Barrio {
     public void establecerReferencia(String n) {
         referencia = n;
     }
+    
+    //Obtener
 
     public String obtenerNombreBarrio() {
         return nombreBarrio;
