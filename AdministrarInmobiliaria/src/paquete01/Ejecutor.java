@@ -17,10 +17,20 @@ public class Ejecutor {
 
         Ejecutor obj = new Ejecutor();
 
-        int op, i = 0;
+        //ArrayLists
+        
+        ArrayList<Propietario> ListaPropietarios = new ArrayList();
+        ArrayList<Barrio> ListaBarrio = new ArrayList();
+        ArrayList<Ciudad> ListaCiudad = new ArrayList();
+        ArrayList<Constructora> ListaConstructora = new ArrayList();
+        ArrayList<Casa> ListaCasa = new ArrayList();
+        ArrayList<Departamento> ListaDepartamento = new ArrayList();
+
+        //-------------------
+        int op, op2, i = 0;
 
         do {
-            
+
             i++;
 
             op = obj.menu();
@@ -28,144 +38,236 @@ public class Ejecutor {
             switch (op) {
 
                 case 1:
-                    String nombreP;
-                    System.out.println("Ingrese el nombre del propietario: ");
-                    nombreP = sc.nextLine();
-                    ArrayList<Propietario> ListaPropietarios = null;                    
-                    Propietario p = new Propietario(nombreP);
-                    ListaPropietarios.add(p);
-                    break;
 
+                    do {
+
+                        String nombrePropietario;
+                        System.out.println("Ingrese el nombre del Propietario: ");
+                        nombrePropietario = sc.nextLine();
+
+                        Propietario p = new Propietario(nombrePropietario);
+                        ListaPropietarios.add(p);
+
+                        sc.nextLine();
+
+                        System.out.println("Si desea ingresar otro Propietario "
+                                + "escriba (1)");
+                        System.err.println("Escriba (0) para volver al Menu de "
+                                + "ingreso");
+                        int r = sc.nextInt();
+                        op = r;
+
+                    } while (op == 1);
+
+                    break;
 
                 case 2:
-                    String nombreB;
-                    System.out.println("Ingrese el nombre del barrio: ");
-                    nombreB = sc.nextLine();
-                    ArrayList<Barrio> ListaBarrios = null;
-                    Barrio b = new Barrio(nombreB);
-                    ListaBarrios.add(b);
-                    break;
 
+                    do {
+
+                        sc.nextLine();
+                        String nombreBarrio;
+                        System.out.println("Ingrese el nombre del Barrio : ");
+                        nombreBarrio = sc.nextLine();
+
+                        Barrio b = new Barrio(nombreBarrio);
+                        ListaBarrio.add(b);
+
+                        sc.nextLine();
+
+                        System.out.println("Si desea ingresar otro Barrio "
+                                + "escriba (2)");
+                        System.err.println("Escriba (0) para volver al Menu de "
+                                + "ingreso");
+                        int r = sc.nextInt();
+                        op = r;
+
+                    } while (op == 2);
+
+                    break;
 
                 case 3:
-                    String nombreC;
-                    System.out.println("Ingrese el nombre de la ciudad: ");
-                    nombreC = sc.nextLine();
-                    ArrayList<Ciudad> ListaCiudad = null;
-                    Ciudad c = new Ciudad(nombreC);
-                    ListaCiudad.add(c);
-                    
-                    break;
 
+                    do {
+
+                        sc.nextLine();
+                        String nombreCivdad;
+                        System.out.println("Ingrese el nombre de la Ciudad : ");
+                        nombreCivdad = sc.nextLine();
+
+                        Ciudad ciu = new Ciudad(nombreCivdad);
+                        ListaCiudad.add(ciu);
+
+                        sc.nextLine();
+
+                        System.out.println("Si desea ingresar otro Barrio "
+                                + "escriba (3)");
+                        System.err.println("Escriba (0) para volver al Menu de "
+                                + "ingreso");
+                        int r = sc.nextInt();
+                        op = r;
+
+                    } while (op == 3);
+
+                    break;
 
                 case 4:
-                    String nombreCt;
-                    System.out.println("Ingrese el nombre de la constructora: ");
-                    nombreCt = sc.nextLine();
-                    ArrayList<Constructora> ListaConstructura = null;
-                    Constructora ct = new Constructora(nombreCt);
-                    ListaConstructura.add(ct);
+
+                    do {
+
+                        sc.nextLine();
+                        String nombreConstructora;
+                        System.out.println("Ingrese el nombre de la Constructora : ");
+                        nombreConstructora = sc.nextLine();
+
+                        Constructora cons = new Constructora(nombreConstructora);
+                        ListaConstructora.add(cons);
+
+                        sc.nextLine();
+
+                        System.out.println("Si desea ingresar otra Constructora "
+                                + "escriba (4)");
+                        System.err.println("Escriba (0) para volver al Menu de "
+                                + "ingreso");
+                        int r = sc.nextInt();
+                        op = r;
+
+                    } while (op == 4);
+
                     break;
 
-
                 case 5:
-                    double precioM2Casa;
-                    System.out.println("Ingrese el precio del metro cuadrado : ");
-                    sc.nextLine();
-                    precioM2Casa = sc.nextDouble();
-                    ArrayList<Casa> ListaCasa;
-                    Casa cas = new Casa(precioM2Casa);
+
+                    do {
+
+                        sc.nextLine();
+                        double precioM2Casa;
+                        System.out.println("Ingrese el precio del metro cuadrado : ");
+                        precioM2Casa = sc.nextDouble();
+
+                        Casa cas = new Casa(precioM2Casa);
+                        ListaCasa.add(cas);
+
+                        sc.nextLine();
+
+                        System.out.println("Si desea ingresar otro Barrio "
+                                + "escriba (5)");
+                        System.err.println("Escriba (0) para volver al Menu de "
+                                + "ingreso");
+                        int r = sc.nextInt();
+                        op = r;
+
+                    } while (op == 5);
+
                     break;
 
                 case 6:
-                    double precioM2Depto;
-                    System.out.println("Ingrese el precio del metro cuadrado : ");
-                    sc.nextLine();
-                    precioM2Depto = sc.nextDouble();
-                    ArrayList<Departamento> ListaDepartamento;
-                    Departamento depto = new Departamento(precioM2Depto);
-                    break;
+
+                    do {
+
+                        sc.nextLine();
+                        double precioM2Departamento;
+                        System.out.println("Ingrese el precio del metro cuadrado : ");
+                        precioM2Departamento = sc.nextDouble();
+
+                        Departamento dep = new Departamento(precioM2Departamento);
+                        ListaDepartamento.add(dep);
+
+                        sc.nextLine();
+
+                        System.out.println("Si desea ingresar otro Barrio "
+                                + "escriba (6)");
+                        System.err.println("Escriba (0) para volver al Menu de "
+                                + "ingreso");
+                        int r = sc.nextInt();
+                        op = r;
+
+                    } while (op == 6);
 
                 default:
                     System.err.println("Error número fuera de rango ingrese "
-                        + "otro..");
+                            + "otro..");
                     break;
 
             }
-            
-        } while (op < 7);       
-        
-        do {
 
-            op = obj.menu2();
+        } while (op == 0);
 
-            switch (op) {
+        if (op == 10) {
 
-                case 11:
+            do {
 
-                    break;
+                op2 = obj.menu2();
 
-                case 12:
+                switch (op2) {
 
-                    break;
+                    case 1:
 
-                case 13:
+                        break;
 
-                    break;
+                    case 2:
 
-                case 14:
+                        break;
 
-                    break;
+                    case 3:
 
-                case 15:
+                        break;
 
-                    break;
+                    case 4:
 
-                case 16:
+                        break;
 
-                    break;
-                    
-                case 17:
+                    case 5:
 
-                    break;
+                        break;
 
-                default:
-                    System.err.println("Error número fuera de rango ingrese"
-                        + " otro..");
-                    break;
+                    case 6:
 
-            }
-            
-        } while (op >= 7 && op != 18);
+                        break;
+
+                    case 7:
+
+                        break;
+
+                    default:
+                        System.err.println("Error número fuera de rango ingrese"
+                                + " otro..");
+                        break;
+
+                }
+
+            } while (op2 != 10);
+
+        }
 
     }
 
     public int menu() {
 
         int opc;
-        System.out.println("Ingresar Propietario:           [1]");
-        System.out.println("Ingresar Barrio:                [2]");
-        System.out.println("Ingresar Ciudad:                [3]");
-        System.out.println("Ingresar Constructora:          [4]");
-        System.out.println("Ingresar Casa:                  [5]");
-        System.out.println("Ingresar Departamento:          [6]");       
-        System.out.println("Terminar Ingresos:              [7]\n");
+        System.out.println("Ingresar Propietario:           [1]:");
+        System.out.println("Ingresar Barrio:                [2]:");
+        System.out.println("Ingresar Ciudad:                [3]:");
+        System.out.println("Ingresar Constructora:          [4]:");
+        System.out.println("Ingresar Casa:                  [5]:");
+        System.out.println("Ingresar Departamento:          [6]:");
+        System.out.println("Terminar Ingresos:              [10]:\n");
 
         opc = sc.nextInt();
         return opc;
     }
-    
+
     public int menu2() {
 
         int opc;
-        System.out.println("Listar Propietario:           [11]");
-        System.out.println("Listar Barrio:                [12]");
-        System.out.println("Listar Ciudad:                [13]");
-        System.out.println("Listar Constructora:          [14]");
-        System.out.println("Listar Casa:                  [15]");
-        System.out.println("Listar Departamento:          [16]");
-        System.out.println("Listar todos:                 [17]");
-        System.out.println("Salir:                        [18]\n");
+        System.out.println("Listar Propietario:           [1]:");
+        System.out.println("Listar Barrio:                [2]:");
+        System.out.println("Listar Ciudad:                [3]:");
+        System.out.println("Listar Constructora:          [4]:");
+        System.out.println("Listar Casa:                  [5]:");
+        System.out.println("Listar Departamento:          [6]:");
+        System.out.println("Listar todos:                 [7]:");
+        System.out.println("Salir y terminar:             [10]:\n");
 
         opc = sc.nextInt();
         return opc;
