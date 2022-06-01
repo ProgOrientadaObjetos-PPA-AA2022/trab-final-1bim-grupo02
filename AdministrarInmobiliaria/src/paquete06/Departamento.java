@@ -23,15 +23,13 @@ public class Departamento implements Serializable {
     //Constructores
     
     public Departamento(Propietario prop, double precioM2, double numM2,
-            double ValorAli, double costoF, 
-            Barrio barr, Ciudad ciu, String nombreEdif, String ubiDeptoEdi,
-            Constructora cons) {
+            double ValorAli, Barrio barr, Ciudad ciu, String nombreEdif,
+            String ubiDeptoEdi, Constructora cons) {
 
         propietario = prop;
         precioMetroCuadrado = precioM2;
         numeroMetrosCuadrados = numM2;
         valorAlicuotaMensual = ValorAli;
-        costoFinal = costoF;
         barrio = barr;
         ciudad = ciu;  
         nombreEdificio = nombreEdif;

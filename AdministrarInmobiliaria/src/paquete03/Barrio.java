@@ -14,13 +14,7 @@ public class Barrio implements Serializable {
         nombreBarrio = nombreB;
         referencia = ref;
     }
-    
-    public Barrio(String nombreB) {
-        
-        nombreBarrio = nombreB;
-        
-    }
-    
+       
     //Establecer
 
     public void establecerNombreBarrio(String n) {

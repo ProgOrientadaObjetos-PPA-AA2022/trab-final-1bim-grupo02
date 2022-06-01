@@ -14,12 +14,7 @@ public class Ciudad implements Serializable {
         nombreCiudad = nombreC;
         nombreProvincia = provinciaC;
     }
-    
-    public Ciudad(String nombreC) {
-        nombreCiudad = nombreC;
-        
-    }
-    
+       
     //Establecer
     
     public void establecerNombreCiudad(String n) {

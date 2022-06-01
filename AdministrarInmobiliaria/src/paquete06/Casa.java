@@ -19,26 +19,19 @@ public class Casa implements Serializable {
 
     //Constructores
     
-    public Casa(Propietario prop, double precioM2, double numM2, double costoF,
-            Barrio barr, Ciudad ciu, int numCuartos, Constructora cons) {
+    public Casa(Propietario prop, double precioM2, double numM2, Barrio barr,
+            Ciudad ciu, int numCuartos, Constructora cons) {
 
         propietario = prop;
         precioMetroCuadrado = precioM2;
         numeroMetrosCuadrados = numM2;
-        costoFinal = costoF;
         barrio = barr;
         ciudad = ciu;
         numeroCuartos = numCuartos;
         constructora = cons;
         
     }
-    
-    public Casa(double precioM2) {
-
-        precioMetroCuadrado = precioM2;
-               
-    }
-    
+      
     //Establecer
 
     public void establecerPropietario(Propietario n) {
