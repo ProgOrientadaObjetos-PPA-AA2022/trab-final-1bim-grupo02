@@ -2,6 +2,7 @@ package paquete01;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import paquete02.EscrituraArchivoSecuencial1;
 import paquete02.Propietario;
 import paquete03.Barrio;
 import paquete04.Ciudad;
@@ -16,8 +17,15 @@ public class Ejecutor {
     public static void main(String[] args) {
 
         Ejecutor obj = new Ejecutor();
+        
+        //File Escritos
+        
+        String nombreArchivoPropietario = "data/propietarios.dat";   
+        EscrituraArchivoSecuencial1 archivoPropietario = 
+            new EscrituraArchivoSecuencial1(nombreArchivoPropietario);
 
         //ArrayLists
+        
         ArrayList<Propietario> ListaPropietarios = new ArrayList();
         ArrayList<Barrio> ListaBarrio = new ArrayList();
         ArrayList<Ciudad> ListaCiudad = new ArrayList();
@@ -26,6 +34,7 @@ public class Ejecutor {
         ArrayList<Departamento> ListaDepartamento = new ArrayList();
 
         //-------------------
+        
         int op, op2, i = 0;
 
         do {
@@ -39,7 +48,9 @@ public class Ejecutor {
                 case 1:
 
                     do {
-
+                        
+                        sc.nextLine();
+                                                 
                         String nombrePropietario;
                         String apellidoPropietario;
                         String idPropietario;
@@ -64,8 +75,12 @@ public class Ejecutor {
                         System.err.println("Escriba (0) para volver al Menu de "
                                 + "ingreso");
                         int r = sc.nextInt();
-                        op = r;
-
+                        op = r;                      
+                        
+                        archivoPropietario.establecerRegistroPropietario(p);
+                        archivoPropietario.establecerSalida();
+                        archivoPropietario.cerrarArchivo();
+                        
                     } while (op == 1);
 
                     break;
