@@ -68,8 +68,6 @@ public class Ejecutor {
 
         do {
 
-            
-
             op = obj.menu();
 
             switch (op) {
@@ -259,12 +257,7 @@ public class Ejecutor {
                         lecturaPropieatarioBC.establecerPropietarioBuscado();
                         
                         propietarioBusC = lecturaPropieatarioBC.
-                            obtenerPropietarioBuscado();
-                        
-                        Propietario proC = new Propietario(
-                                propietarioBusC.obtenerNombres(), 
-                                propietarioBusC.obtenerApellidos(),
-                                propietarioBusC.obtenerIdentificacion());
+                            obtenerPropietarioBuscado();                                                
                         
                         if (propietarioBusC == null){
                             
@@ -272,6 +265,11 @@ public class Ejecutor {
                                     + "ingrese uno en el menu de ingreso");
                     
                         }
+                        
+                        Propietario proC = new Propietario(
+                                propietarioBusC.obtenerNombres(), 
+                                propietarioBusC.obtenerApellidos(),
+                                propietarioBusC.obtenerIdentificacion());
                         
                         //-----------------------|
 
@@ -306,11 +304,7 @@ public class Ejecutor {
                         
                         lecturaBarrioBC.establecerBarrioBuscado();
                         
-                        barrioBusC = lecturaBarrioBC.obtenerBarrioBuscado();
-                                                                      
-                        Barrio barC = new Barrio(
-                            barrioBusC.obtenerNombreBarrio(), 
-                            barrioBusC.obtenerReferencia());
+                        barrioBusC = lecturaBarrioBC.obtenerBarrioBuscado();                                                                                           
                             
                         if (barrioBusC == null){
                             
@@ -318,6 +312,10 @@ public class Ejecutor {
                                     + "ingrese uno en el menu de ingreso");
                     
                         }
+                        
+                        Barrio barC = new Barrio(
+                            barrioBusC.obtenerNombreBarrio(), 
+                            barrioBusC.obtenerReferencia());
                         
                         //---------------------|
                         
@@ -340,11 +338,7 @@ public class Ejecutor {
                         
                         lecturaCiudadBC.establecerCiudadBuscada();
                         
-                        ciudadBusC = lecturaCiudadBC.obtenerCiudadBuscada();
-                        
-                        Ciudad ciuC = new Ciudad(
-                            ciudadBusC.obtenerNombreCiudad(), 
-                            ciudadBusC.obtenerNombreProvincia());
+                        ciudadBusC = lecturaCiudadBC.obtenerCiudadBuscada();                                              
                             
                         if (ciudadBusC == null){
                             
@@ -352,6 +346,10 @@ public class Ejecutor {
                                     + " ingrese una en el menu de ingreso");
                     
                         }
+                        
+                        Ciudad ciuC = new Ciudad(
+                            ciudadBusC.obtenerNombreCiudad(), 
+                            ciudadBusC.obtenerNombreProvincia());
                         
                         //--------------------|
                         
@@ -384,11 +382,7 @@ public class Ejecutor {
                         
                         lecturaConstBC.establecerConstructoraBuscada();
                         
-                        consBusC = lecturaConstBC.obtenerConstructoraBuscada();              
-                            
-                        Constructora consC = new Constructora(
-                            consBusC.obtenerNombreConstructora(), 
-                            consBusC.obtenerIdEmpresa());
+                        consBusC = lecturaConstBC.obtenerConstructoraBuscada();                                                               
                             
                         if (consBusC == null){
                             
@@ -396,6 +390,10 @@ public class Ejecutor {
                                     + " ingrese una en el menu de ingreso");
                     
                         }
+                        
+                        Constructora consC = new Constructora(
+                            consBusC.obtenerNombreConstructora(), 
+                            consBusC.obtenerIdEmpresa());
                         
                         //------------------------|
                         
@@ -463,18 +461,18 @@ public class Ejecutor {
                         
                         propietarioBusD = lecturaPropieatarioBD.
                             obtenerPropietarioBuscado();
-                        
-                        Propietario proD = new Propietario(
-                                propietarioBusD.obtenerNombres(), 
-                                propietarioBusD.obtenerApellidos(),
-                                propietarioBusD.obtenerIdentificacion());
-                        
+                                               
                         if (propietarioBusD == null){
                             
                             System.out.println("Propietario no encontrado.."
                                     + "ingrese uno en el menu de ingreso");
                     
                         }
+                        
+                        Propietario proD = new Propietario(
+                                propietarioBusD.obtenerNombres(), 
+                                propietarioBusD.obtenerApellidos(),
+                                propietarioBusD.obtenerIdentificacion());
                         
                         //------------------------|
                         
@@ -513,17 +511,17 @@ public class Ejecutor {
                         lecturaBarrioBD.establecerBarrioBuscado();
                         
                         barrioBusD = lecturaBarrioBD.obtenerBarrioBuscado();
-                                                                      
-                        Barrio barD = new Barrio(
-                            barrioBusD.obtenerNombreBarrio(), 
-                            barrioBusD.obtenerReferencia());
-                            
+                                                                                                   
                         if (barrioBusD == null){
                             
                             System.out.println("Barrio no encontrado.."
                                     + "ingrese uno en el menu de ingreso");
                     
                         }
+                        
+                        Barrio barD = new Barrio(
+                            barrioBusD.obtenerNombreBarrio(), 
+                            barrioBusD.obtenerReferencia());
                         
                         //-------------------------|
                         
@@ -547,17 +545,17 @@ public class Ejecutor {
                         lecturaCiudadBD.establecerCiudadBuscada();
                         
                         ciudadBusD = lecturaCiudadBD.obtenerCiudadBuscada();
-                        
-                        Ciudad ciuD = new Ciudad(
-                            ciudadBusD.obtenerNombreCiudad(), 
-                            ciudadBusD.obtenerNombreProvincia());
-                            
+                                                                          
                         if ( ciudadBusD == null ) {
                             
                             System.out.println("Ciudad no encontrada.."
                                     + " ingrese una en el menu de ingreso");
                     
                         }
+                        
+                        Ciudad ciuD = new Ciudad(
+                            ciudadBusD.obtenerNombreCiudad(), 
+                            ciudadBusD.obtenerNombreProvincia());
                         
                         //--------------------|
 
@@ -590,11 +588,7 @@ public class Ejecutor {
                         
                         lecturaConstBD.establecerConstructoraBuscada();
                         
-                        constBusD = lecturaConstBD.obtenerConstructoraBuscada();              
-                            
-                        Constructora consD = new Constructora(
-                            constBusD.obtenerNombreConstructora(), 
-                            constBusD.obtenerIdEmpresa());
+                        constBusD = lecturaConstBD.obtenerConstructoraBuscada();                                                              
                             
                         if (constBusD == null){
                             
@@ -602,6 +596,10 @@ public class Ejecutor {
                                     + " ingrese una en el menu de ingreso");
                     
                         }
+                        
+                        Constructora consD = new Constructora(
+                            constBusD.obtenerNombreConstructora(), 
+                            constBusD.obtenerIdEmpresa());
                         
                         //---------------------|
                         

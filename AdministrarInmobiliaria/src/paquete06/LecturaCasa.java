@@ -1,7 +1,5 @@
 package paquete06;
 
-
-import paquete04.*;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
