@@ -37,12 +37,7 @@ public class Departamento implements Serializable {
         constructora = cons;
         
     }
-    
-    public Departamento(double precioM2) {       
-        precioMetroCuadrado = precioM2;
-              
-    }
-    
+      
     //Establecer
 
     public void establecerPropietario(Propietario n) {
@@ -88,7 +83,7 @@ public class Departamento implements Serializable {
     
     //Obtener
     
-    public Propietario obtenerPropietrio() {
+    public Propietario obtenerPropietario() {
         return propietario;
     }
     

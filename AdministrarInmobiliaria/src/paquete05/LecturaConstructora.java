@@ -1,4 +1,4 @@
-package paquete02;
+package paquete05;
 
 import java.io.EOFException;
 import java.io.File;
@@ -8,17 +8,16 @@ import java.io.ObjectInputStream;
 
 import java.util.ArrayList;
 
-public class LecturaArchivoSecuencial1 {
+public class LecturaConstructora {
 
     private ObjectInputStream entrada;
-    private ArrayList<Propietario> propietarios;
-    private String nombreArchivo = "data/propietario.dat";
+    private ArrayList<Constructora> constructoras;
+    private String nombreArchivo;
     private String identificador;
-    private Propietario propietarioBuscado;
+    private Constructora constBuscada;
 
-    public LecturaArchivoSecuencial1(String n) {
+    public LecturaConstructora(String n) {
         
-        n = "data/propietario.dat";
         nombreArchivo = n;
         File f = new File(obtenerNombreArchivo());
 
@@ -39,9 +38,9 @@ public class LecturaArchivoSecuencial1 {
         nombreArchivo = n;
     }
 
-    public void establecerPropietarios() {
+    public void establecerConstructoras() {
 
-        propietarios = new ArrayList<>();
+        constructoras = new ArrayList<>();
         File f = new File(obtenerNombreArchivo());
 
         if (f.exists()) {
@@ -49,8 +48,8 @@ public class LecturaArchivoSecuencial1 {
             while (true) {
                 try {
 
-                    Propietario registro = (Propietario) entrada.readObject();
-                    propietarios.add(registro);
+                    Constructora registro = (Constructora) entrada.readObject();
+                    constructoras.add(registro);
 
                 } catch (EOFException endOfFileException) {
                     return;
@@ -71,17 +70,17 @@ public class LecturaArchivoSecuencial1 {
         identificador = n;
     }
 
-    public void establecerPropietarioBuscado() {
+    public void establecerConstructoraBuscada() {
 
         File f = new File(obtenerNombreArchivo());
         if (f.exists()) {
 
             while (true) {
                 try {
-                    Propietario registro = (Propietario) entrada.readObject();
+                    Constructora registro = (Constructora) entrada.readObject();
 
-                    if (registro.obtenerIdentificacion().equals(identificador)) {
-                        propietarioBuscado = registro;
+                    if (registro.obtenerIdEmpresa().equals(identificador)) {
+                        constBuscada = registro;
                         break;
                     }
 
@@ -100,8 +99,8 @@ public class LecturaArchivoSecuencial1 {
         }
     }
 
-    public ArrayList<Propietario> obtenerPropietarios() {
-        return propietarios;
+    public ArrayList<Constructora> obtenerConstructoras() {
+        return constructoras;
     }
 
     public String obtenerNombreArchivo() {
@@ -112,21 +111,21 @@ public class LecturaArchivoSecuencial1 {
         return identificador;
     }
 
-    public Propietario obtenerPropietarioBuscado() {
-        return propietarioBuscado;
+    public Constructora obtenerConstructoraBuscada() {
+        return constBuscada;
     }
 
     @Override
     public String toString() {
-        String cadena = "Lista de Propietarios\n";
-        for (int i = 0; i < obtenerPropietarios().size(); i++) {
-            Propietario p = obtenerPropietarios().get(i);
-            cadena = String.format("%s%d._  Nombre: %s\n Apellidos: %s\n "
-                    + "Id: %s\n", cadena,
+        String cadena = "Lista de Constructoras:\n";
+        for (int i = 0; i < obtenerConstructoras().size(); i++) {
+            Constructora p = obtenerConstructoras().get(i);
+            cadena = String.format("%s\n%d._  Nombre: %s\n id Empresa: %s\n ",
+                    cadena,
                     i + 1,
-                    p.obtenerNombres(),
-                    p.obtenerApellidos(),
-                    p.obtenerIdentificacion());
+                    p.obtenerNombreConstructora(),
+                    p.obtenerIdEmpresa());
+                    
         }
 
         return cadena;

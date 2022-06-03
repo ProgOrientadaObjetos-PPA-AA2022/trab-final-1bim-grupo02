@@ -88,11 +88,11 @@ public class Casa implements Serializable {
         return barrio;
     }
 
-    public Ciudad obtenerConjuntoMedicos() {
+    public Ciudad obtenerCiudad() {
         return ciudad;
     }
 
-    public double obtenerNumeroCuartos() {
+    public int obtenerNumeroCuartos() {
         return numeroCuartos;
     }
 

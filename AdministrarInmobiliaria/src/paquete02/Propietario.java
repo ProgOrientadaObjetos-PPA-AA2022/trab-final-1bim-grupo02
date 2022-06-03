@@ -16,13 +16,7 @@ public class Propietario implements Serializable {
         apellidos = apell;
         identificacion = ident;
     }
-    
-    public Propietario(String nom) {
-        
-        nombres = nom;
-       
-    }
-    
+     
     //Establecer
     
     public void establecerNombres(String n) {

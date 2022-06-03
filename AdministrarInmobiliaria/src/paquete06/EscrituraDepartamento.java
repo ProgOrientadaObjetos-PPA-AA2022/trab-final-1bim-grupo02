@@ -1,33 +1,34 @@
 
-package paquete02;
+package paquete06;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-public class EscrituraArchivoSecuencial1 {
+public class EscrituraDepartamento {
 
-    private String nombreArchivo = "data/propietarios.dat";
+    private String nombreArchivo;
     private ObjectOutputStream salida;
-    private Propietario registroPropietario;
-    private ArrayList<Propietario> listaPropietario;
+    private Departamento registroDepartamento;
+    private ArrayList<Departamento> listaDepartamento;
 
-    public EscrituraArchivoSecuencial1(String n) {
-        n = "data/propietarios.dat";
+    public EscrituraDepartamento(String n) {
+        
         nombreArchivo = n;
-        establecerListaPropietarios();
+        establecerListaDepartamentos();
 
         try {
 
             salida = new ObjectOutputStream(new FileOutputStream(nombreArchivo));
 
-            if (obtenerListaPropietarios().size() > 0) {
-                for (int i = 0; i < obtenerListaPropietarios().size(); i++) {
-                    establecerRegistroPropietario(obtenerListaPropietarios().get(i));
+            if (obtenerListaDepartamentos().size() > 0) {
+                for (int i = 0; i < obtenerListaDepartamentos().size(); i++) {
+                    establecerRegistroDepartmento(obtenerListaDepartamentos().get(i));
                     establecerSalida();
                 }
             }
+            
         } catch (IOException ioException) {
             System.err.println("Error al abrir el archivo.");
         }
@@ -37,15 +38,15 @@ public class EscrituraArchivoSecuencial1 {
         nombreArchivo = n;
     }
 
-    public void establecerRegistroPropietario(Propietario p) {
-        registroPropietario = p;
+    public void establecerRegistroDepartmento(Departamento c) {
+        registroDepartamento = c;
     }
 
     public void establecerSalida() {
 
         try {
 
-            salida.writeObject(registroPropietario);
+            salida.writeObject(registroDepartamento);
 
         } catch (IOException ex) {
 
@@ -54,12 +55,12 @@ public class EscrituraArchivoSecuencial1 {
         }
     }
 
-    public void establecerListaPropietarios() {
+    public void establecerListaDepartamentos() {
 
-        LecturaArchivoSecuencial1 l
-            = new LecturaArchivoSecuencial1(obtenerNombreArchivo());
-        l.establecerPropietarios();
-        listaPropietario = l.obtenerPropietarios();
+        LecturaDepartamento l
+            = new LecturaDepartamento(obtenerNombreArchivo());
+        l.establecerDepartamentos();
+        listaDepartamento = l.obtenerDepartamentos();
 
     }
 
@@ -67,8 +68,8 @@ public class EscrituraArchivoSecuencial1 {
         return nombreArchivo;
     }
 
-    public ArrayList<Propietario> obtenerListaPropietarios() {
-        return listaPropietario;
+    public ArrayList<Departamento> obtenerListaDepartamentos() {
+        return listaDepartamento;
     }
 
     public ObjectOutputStream obtenerSalida() {

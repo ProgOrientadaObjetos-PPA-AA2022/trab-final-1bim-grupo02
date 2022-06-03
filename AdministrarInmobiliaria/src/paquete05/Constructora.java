@@ -15,12 +15,7 @@ public class Constructora implements Serializable {
         nombreConstructora = nombreC;
         idEmpresa = idE;
     }
-    
-    public Constructora(String nombreC) {
-        nombreConstructora = nombreC;
-        
-    }
-    
+      
     //Establecer
 
     public void establecerNombreConstructora(String n) {
